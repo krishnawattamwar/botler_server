@@ -15,7 +15,7 @@ echo -e "Hello Team, \n\nRASA-Core service it was down on $(date +" %d/%m/%Y at 
 	then
 	echo -e "Hello Team, \n\nRASA-Core service is down on $(date +" %d/%m/%Y at %R") \n\n\nRegards, \nTeam ITSupport" | mail -s "RASA-Core service is down" $NOTIFYEMAIL
 	else
-		    echo -e "\nRASA-Core service is working" # > /dev/null  2>&1
+		    echo -e "\nRASA-Core service is working"  > /dev/null  2>&1
 fi
 
 
@@ -28,6 +28,6 @@ echo -e "Hello Team, \n\nRASA-Action service it was down on $(date +" %d/%m/%Y a
 	then
 	echo -e "Hello Team, \n\nRASA-Action service is down on $(date +" %d/%m/%Y at %R") \n\n\nRegards, \nTeam ITSupport" | mail -s "RASA-Action service is down" $NOTIFYEMAIL
 	else
-		    echo -e "\nRASA-Action service is working" # > /dev/null  2>&1
+		    echo -e "\nRASA-Action service is working"  > /dev/null  2>&1
 fi
 
