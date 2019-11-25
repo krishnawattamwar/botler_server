@@ -2,7 +2,7 @@
 SERVERIP_PROD="Botler Prod"
 NOTIFYEMAIL="itsupport@graymatrix.com"
 #NOTIFYEMAIL1="krishna.wattamwar@graymatrix.com"
-COUNT_PROD=$(curl http://10.198.0.4:5000 -k -s -f -o /dev/null --connect-timeout 30 && echo "SUCCESS" || echo "FAIL")
+COUNT_PROD=$(curl http://10.198.0.4 -k -s -f -o /dev/null --connect-timeout 30 && echo "SUCCESS" || echo "FAIL")
 MSG=""
 
 if [ $COUNT_PROD != "SUCCESS" ];
@@ -15,5 +15,5 @@ fi
 
 if [ "${MSG}" != "" ];
 then
-		echo "Hello Team, \n\n${MSG} \n\n\nRegards, \nTeam ITSupport"  | mail -s "Botler Prod server is down" $NOTIFYEMAIL
+		echo "Hello Team, \n\n${MSG} \n\nRegards, \nTeam ITSupport"  | mail -s "Botler Prod server is down" $NOTIFYEMAIL
 fi
