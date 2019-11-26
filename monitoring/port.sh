@@ -1,3 +1,4 @@
+#! /bin/bash
 NOTIFYEMAIL="itsupport@graymatrix.com"
 SERVER="localhost"
 #PORT1="5005" # BMS RASA-CORE
@@ -9,7 +10,7 @@ PORT6="5058" # BOTLER RASA-NLG
 #PORT7="5003" # CUSTODIAN RASA-CORE
 #PORT8="5059" # CUSTODIAN RASA-ACTION
 #PORT9="5060" # CUSTODIAN RASA-NLG
-#state1=`nmap -p $PORT1 $SERVER | grep "$PORT1" | grep open`
+state1=`nmap -p $PORT1 $SERVER | grep "$PORT1" | grep open`
 #state2=`nmap -p $PORT2 $SERVER | grep "$PORT2" | grep open`
 #state3=`nmap -p $PORT3 $SERVER | grep "$PORT3" | grep open`
 state4=`nmap -p $PORT4 $SERVER | grep "$PORT4" | grep open`
@@ -77,5 +78,5 @@ fi
 
 if [ "${MSG}" != "" ];
 then
-		echo -e "Hello Team, \n\n${MSG}at $(date +" %d/%m/%Y at %R") \n\n\nRegards, \nTeam ITSupport"   | mail -s "RASA Service of Botler UAT server is down" NOTIFYEMAIL
+echo -e "Hello Team, \n\n${MSG}at $(date +" %d/%m/%Y at %R") \n\n\nRegards, \nTeam ITSupport"  | mail -s "RASA Service of Botler Producation server is down" $NOTIFYEMAIL
 fi
