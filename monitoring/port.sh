@@ -1,6 +1,6 @@
 NOTIFYEMAIL="itsupport@graymatrix.com"
 SERVER="localhost"
-PORT1="5005" # BMS RASA-CORE
+#PORT1="5005" # BMS RASA-CORE
 #PORT2="5055" # BMS RASA-ACTION
 #PORT3="5056" # BMS RASA-NLG
 PORT4="5002" # BOTLER RASA-CORE
@@ -21,11 +21,11 @@ state6=`nmap -p $PORT6 $SERVER | grep "$PORT6" | grep open`
 
 MSG=""
 
-if [ -z "$state1" ]; then
-  MSG="${MSG}CORE service of BMS RASA is down which is running on $PORT1 port.\n"  
-else
-  echo "Connection to $SERVER on port $PORT1 was successful"   > /dev/null 2>&1 
-fi
+#if [ -z "$state1" ]; then
+#  MSG="${MSG}CORE service of BMS RASA is down which is running on $PORT1 port.\n"  
+#else
+#  echo "Connection to $SERVER on port $PORT1 was successful"   > /dev/null 2>&1 
+#fi
 
 #if [ -z "$state2" ]; then
 #  MSG="${MSG}Action service of BMS RASA is down which is running on $PORT2 port.\n"  
