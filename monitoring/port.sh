@@ -22,55 +22,55 @@ state9=`nmap -p $PORT9 $SERVER | grep "$PORT9" | grep open`
 MSG=""
 
 #if [ -z "$state1" ]; then
-#  MSG="${MSG}CORE service of BMS RASA is down which is running $PORT1 port.\n"  
+#  MSG="${MSG}CORE service of BMS RASA is down which is running on $PORT1 port.\n"  
 #else
 #  echo "Connection to $SERVER on port $PORT1 was successful"   > /dev/null 2>&1 
 #fi
 
 #if [ -z "$state2" ]; then
-#  MSG="${MSG}Action service of BMS RASA is down which is running $PORT2 port.\n"  
+#  MSG="${MSG}Action service of BMS RASA is down which is running on $PORT2 port.\n"  
 #else
 #  echo "Connection to $SERVER on port $PORT2 was successful"   > /dev/null 2>&1 
 #fi
 
 #if [ -z "$state3" ]; then
-#  MSG="${MSG}NLG service of BMS RASA is down which is running $PORT3 port.\n"  
+#  MSG="${MSG}NLG service of BMS RASA is down which is running on $PORT3 port.\n"  
 #else
 #  echo "Connection to $SERVER on port $PORT3 was successful"   > /dev/null 2>&1 
 #fi
 
 if [ -z "$state4" ]; then
-  MSG="${MSG}Core service of Botler RASA is down which is running $PORT4 port.\n"  
+  MSG="${MSG}Core service of Botler RASA is down which is running on $PORT4 port.\n"  
 else
   echo "Connection to $SERVER on port $PORT4 was successful"   > /dev/null 2>&1 
 fi
 
 if [ -z "$state5" ]; then
-  MSG="${MSG}Action service of Botler RASA is down which is running $PORT5 port.\n"  
+  MSG="${MSG}Action service of Botler RASA is down which is running on $PORT5 port.\n"  
 else
   echo "Connection to $SERVER on port $PORT5 was successful"   > /dev/null 2>&1 
 fi
 
 if [ -z "$state6" ]; then
-  MSG="${MSG}NLG service of Botler RASA is down which is running $PORT6 port.\n"  
+  MSG="${MSG}NLG service of Botler RASA is down which is running on $PORT6 port.\n"  
 else
   echo "Connection to $SERVER on port $PORT6 was successful"   > /dev/null 2>&1 
 fi
 
 if [ -z "$state7" ]; then
-  MSG="${MSG}Core service of CUSTODIAN RASA is down which is running $PORT7 port.\n"  
+  MSG="${MSG}Core service of CUSTODIAN RASA is down which is running on $PORT7 port.\n"  
 else
   echo "Connection to $SERVER on port $PORT7 was successful"   > /dev/null 2>&1 
 fi
 
 if [ -z "$state8" ]; then
-  MSG="${MSG}Action service of CUSTODIAN RASA is down which is running $PORT8 port.\n"  
+  MSG="${MSG}Action service of CUSTODIAN RASA is down which is running on $PORT8 port.\n"  
 else
   echo "Connection to $SERVER on port $PORT8 was successful"   > /dev/null 2>&1 
 fi
 
 if [ -z "$state9" ]; then
-  MSG="${MSG}NLG service of CUSTODIAN RASA is down which is running $PORT9 port.\n"  
+  MSG="${MSG}NLG service of CUSTODIAN RASA is down which is running on $PORT9 port.\n"  
 else
   echo "Connection to $SERVER on port $PORT9 was successful"   > /dev/null 2>&1 
 fi
