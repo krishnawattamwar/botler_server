@@ -1,6 +1,7 @@
 #! /bin/bash
-NOTIFYEMAIL="itsupport@graymatrix.com"
-SERVER="localhost"
+NOTIFYEMAIL="itsupport@graymatrix.com,suraj.padhy@graymatrix.com"
+SERVER="localhost" > /dev/null 2>&1
+
 #PORT1="5005" # BMS RASA-CORE
 #PORT2="5055" # BMS RASA-ACTION
 #PORT3="5056" # BMS RASA-NLG
@@ -10,7 +11,8 @@ PORT6="5058" # BOTLER RASA-NLG
 #PORT7="5003" # CUSTODIAN RASA-CORE
 #PORT8="5059" # CUSTODIAN RASA-ACTION
 #PORT9="5060" # CUSTODIAN RASA-NLG
-state1=`nmap -p $PORT1 $SERVER | grep "$PORT1" | grep open`
+
+#state1=`nmap -p $PORT1 $SERVER | grep "$PORT1" | grep open`
 #state2=`nmap -p $PORT2 $SERVER | grep "$PORT2" | grep open`
 #state3=`nmap -p $PORT3 $SERVER | grep "$PORT3" | grep open`
 state4=`nmap -p $PORT4 $SERVER | grep "$PORT4" | grep open`
