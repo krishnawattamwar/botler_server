@@ -1,3 +1,4 @@
+#! /bin/bash
 NOTIFYEMAIL="itsupport@graymatrix.com"
 SERVER="localhost"
 #PORT1="5005" # BMS RASA-CORE
