@@ -1,14 +1,29 @@
-NOTIFYEMAIL="itsupport@graymatrix.com"
+NOTIFYEMAIL="itsupport@graymatrix.com,suraj,padhy@graymatrix.com"
 SERVER="localhost"
+
+#BMS
 #PORT1="5005" # BMS RASA-CORE
 #PORT2="5055" # BMS RASA-ACTION
 #PORT3="5056" # BMS RASA-NLG
+#BOTLER
 PORT4="5002" # BOTLER RASA-CORE
 PORT5="5057" # BOTLER RASA-ACTION
 PORT6="5058" # BOTLER RASA-NLG
+#CUSTODIAN
 PORT7="5003" # CUSTODIAN RASA-CORE
 PORT8="5059" # CUSTODIAN RASA-ACTION
 PORT9="5060" # CUSTODIAN RASA-NLG
+#PEPKOR
+PORT10="5006" # PEPKOR RASA-CORE
+PORT11="5061" # PEPKOR RASA-ACTION
+PORT12="5062" # PEPKOR RASA-NLG
+#CASHCONNECT
+PORT13="5007" # CASHCONNECT RASA-CORE
+PORT14="5063" # CASHCONNECT RASA-ACTION
+PORT15="5064" # CASHCONNECT RASA-NLG
+
+
+
 #state1=`nmap -p $PORT1 $SERVER | grep "$PORT1" | grep open`
 #state2=`nmap -p $PORT2 $SERVER | grep "$PORT2" | grep open`
 #state3=`nmap -p $PORT3 $SERVER | grep "$PORT3" | grep open`
@@ -18,6 +33,12 @@ state6=`nmap -p $PORT6 $SERVER | grep "$PORT6" | grep open`
 state7=`nmap -p $PORT7 $SERVER | grep "$PORT7" | grep open`
 state8=`nmap -p $PORT8 $SERVER | grep "$PORT8" | grep open`
 state9=`nmap -p $PORT9 $SERVER | grep "$PORT9" | grep open`
+state10=`nmap -p $PORT10 $SERVER | grep "$PORT10" | grep open`
+state11=`nmap -p $PORT11 $SERVER | grep "$PORT11" | grep open`
+state12=`nmap -p $PORT12 $SERVER | grep "$PORT12" | grep open`
+state13=`nmap -p $PORT13 $SERVER | grep "$PORT13" | grep open`
+state14=`nmap -p $PORT14 $SERVER | grep "$PORT14" | grep open`
+state15=`nmap -p $PORT15 $SERVER | grep "$PORT15" | grep open`
 
 MSG=""
 
@@ -73,6 +94,42 @@ if [ -z "$state9" ]; then
   MSG="${MSG}NLG service of CUSTODIAN RASA is down which is running on $PORT9 port.\n"  
 else
   echo "Connection to $SERVER on port $PORT9 was successful"   > /dev/null 2>&1 
+fi
+
+if [ -z "$state10" ]; then
+  MSG="${MSG}Core service of CASHCONNECT RASA is down which is running on $PORT10 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT10 was successful"   > /dev/null 2>&1 
+fi
+
+if [ -z "$state11" ]; then
+  MSG="${MSG}Action service of CASHCONNECT RASA is down which is running on $PORT11 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT11 was successful"   > /dev/null 2>&1 
+fi
+
+if [ -z "$state12" ]; then
+  MSG="${MSG}NLG service of CASHCONNECT RASA is down which is running on $PORT12 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT12 was successful"   > /dev/null 2>&1 
+fi
+
+if [ -z "$state13" ]; then
+  MSG="${MSG}Core service of PEPKOR RASA is down which is running on $PORT13 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT13 was successful"   > /dev/null 2>&1 
+fi
+
+if [ -z "$state14" ]; then
+  MSG="${MSG}Action service of PEPKOR RASA is down which is running on $PORT14 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT14 was successful"   > /dev/null 2>&1 
+fi
+
+if [ -z "$state15" ]; then
+  MSG="${MSG}NLG service of PEPKOR RASA is down which is running on $PORT15 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT15 was successful"   > /dev/null 2>&1 
 fi
 
 if [ "${MSG}" != "" ];
