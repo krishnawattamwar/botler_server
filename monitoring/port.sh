@@ -8,9 +8,9 @@ SERVER="localhost" > /dev/null 2>&1
 PORT4="5002" # BOTLER RASA-CORE
 PORT5="5057" # BOTLER RASA-ACTION
 PORT6="5058" # BOTLER RASA-NLG
-#PORT7="5003" # CUSTODIAN RASA-CORE
-#PORT8="5059" # CUSTODIAN RASA-ACTION
-#PORT9="5060" # CUSTODIAN RASA-NLG
+PORT7="5003" # CUSTODIAN RASA-CORE
+PORT8="5059" # CUSTODIAN RASA-ACTION
+PORT9="5060" # CUSTODIAN RASA-NLG
 
 #state1=`nmap -p $PORT1 $SERVER | grep "$PORT1" | grep open`
 #state2=`nmap -p $PORT2 $SERVER | grep "$PORT2" | grep open`
@@ -18,9 +18,9 @@ PORT6="5058" # BOTLER RASA-NLG
 state4=`nmap -p $PORT4 $SERVER | grep "$PORT4" | grep open`
 state5=`nmap -p $PORT5 $SERVER | grep "$PORT5" | grep open`
 state6=`nmap -p $PORT6 $SERVER | grep "$PORT6" | grep open`
-#state7=`nmap -p $PORT7 $SERVER | grep "$PORT7" | grep open`
-#state8=`nmap -p $PORT8 $SERVER | grep "$PORT8" | grep open`
-#state9=`nmap -p $PORT9 $SERVER | grep "$PORT9" | grep open`
+state7=`nmap -p $PORT7 $SERVER | grep "$PORT7" | grep open`
+state8=`nmap -p $PORT8 $SERVER | grep "$PORT8" | grep open`
+state9=`nmap -p $PORT9 $SERVER | grep "$PORT9" | grep open`
 
 MSG=""
 
@@ -60,23 +60,23 @@ else
   echo "Connection to $SERVER on port $PORT6 was successful"   > /dev/null 2>&1 
 fi
 
-#if [ -z "$state7" ]; then
-#  MSG="${MSG}Core service of CUSTODIAN RASA is down which is running on $PORT7 port.\n"  
-#else
-#  echo "Connection to $SERVER on port $PORT7 was successful"   > /dev/null 2>&1 
-#fi
+if [ -z "$state7" ]; then
+  MSG="${MSG}Core service of CUSTODIAN RASA is down which is running on $PORT7 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT7 was successful"   > /dev/null 2>&1 
+fi
 
-#if [ -z "$state8" ]; then
-#  MSG="${MSG}Action service of CUSTODIAN RASA is down which is running on $PORT8 port.\n"  
-#else
-#  echo "Connection to $SERVER on port $PORT8 was successful"   > /dev/null 2>&1 
-#fi
+if [ -z "$state8" ]; then
+  MSG="${MSG}Action service of CUSTODIAN RASA is down which is running on $PORT8 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT8 was successful"   > /dev/null 2>&1 
+fi
 
-#if [ -z "$state9" ]; then
-#  MSG="${MSG}NLG service of CUSTODIAN RASA is down which is running on $PORT9 port.\n"  
-#else
-#  echo "Connection to $SERVER on port $PORT9 was successful"   > /dev/null 2>&1 
-#fi
+if [ -z "$state9" ]; then
+  MSG="${MSG}NLG service of CUSTODIAN RASA is down which is running on $PORT9 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT9 was successful"   > /dev/null 2>&1 
+fi
 
 if [ "${MSG}" != "" ];
 then
