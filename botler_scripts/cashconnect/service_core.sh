@@ -5,7 +5,7 @@ echo "------------------------------"  > /dev/null  2>&1
 echo -e  "\nenv is activated"			> /dev/null  2>&1
 echo "------------------------------" > /dev/null  2>&1
 
-cd /home/cashconnect_prod_rasa
+cd /home/cashconnect_prod_rasa/www
 
 echo "------------------------------" > /dev/null  2>&1
 echo -e "\ncore server is starting now" > /dev/null  2>&1
