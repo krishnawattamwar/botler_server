@@ -17,9 +17,13 @@ PORT10="5007" # CASHCONNECT RASA-CORE
 PORT11="5063" # CASHCONNECT RASA-ACTION
 PORT12="5064" # CASHCONNECT RASA-NLG
 
-PORT13="5006" # PEPKOR RASA-CORE
-PORT14="5061" # PEPKOR RASA-ACTION
-PORT15="5062" # PEPKOR RASA-NLG
+PORT13="5006" # PEP RASA-CORE
+PORT14="5061" # PEP RASA-ACTION
+PORT15="5062" # PEP RASA-NLG
+
+PORT16="6001" # PEPKOR RASA-CORE
+PORT17="5071" # PEPKOR RASA-ACTION
+PORT18="5072" # PEPKOR RASA-NLG
 
 
 #state1=`nmap -p $PORT1 $SERVER | grep "$PORT1" | grep open`
@@ -37,6 +41,9 @@ state12=`nmap -p $PORT12 $SERVER | grep "$PORT12" | grep open`
 state13=`nmap -p $PORT13 $SERVER | grep "$PORT13" | grep open`
 state14=`nmap -p $PORT14 $SERVER | grep "$PORT14" | grep open`
 state15=`nmap -p $PORT15 $SERVER | grep "$PORT15" | grep open`
+state16=`nmap -p $PORT16 $SERVER | grep "$PORT16" | grep open`
+state17=`nmap -p $PORT17 $SERVER | grep "$PORT17" | grep open`
+state18=`nmap -p $PORT18 $SERVER | grep "$PORT18" | grep open`
 
 
 
@@ -115,21 +122,39 @@ else
 fi
 
 if [ -z "$state13" ]; then
-  MSG="${MSG}Core service of PEPKOR RASA is down which is running on $PORT13 port.\n"  
+  MSG="${MSG}Core service of PEP RASA is down which is running on $PORT13 port.\n"  
 else
   echo "Connection to $SERVER on port $PORT13 was successful"   > /dev/null 2>&1 
 fi
 
 if [ -z "$state14" ]; then
-  MSG="${MSG}Action service of PEPKOR RASA is down which is running on $PORT14 port.\n"  
+  MSG="${MSG}Action service of PEP RASA is down which is running on $PORT14 port.\n"  
 else
   echo "Connection to $SERVER on port $PORT14 was successful"   > /dev/null 2>&1 
 fi
 
 if [ -z "$state15" ]; then
-  MSG="${MSG}NLG service of PEPKOR RASA is down which is running on $PORT15 port.\n"  
+  MSG="${MSG}NLG service of PEP RASA is down which is running on $PORT15 port.\n"  
 else
   echo "Connection to $SERVER on port $PORT15 was successful"   > /dev/null 2>&1 
+fi
+
+if [ -z "$state16" ]; then
+  MSG="${MSG}Core service of PEPKOR RASA is down which is running on $PORT16 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT16 was successful"   > /dev/null 2>&1 
+fi
+
+if [ -z "$state17" ]; then
+  MSG="${MSG}Action service of PEPKOR RASA is down which is running on $PORT17 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT17 was successful"   > /dev/null 2>&1 
+fi
+
+if [ -z "$state18" ]; then
+  MSG="${MSG}NLG service of PEPKOR RASA is down which is running on $PORT18 port.\n"  
+else
+  echo "Connection to $SERVER on port $PORT18 was successful"   > /dev/null 2>&1 
 fi
 
 if [ "${MSG}" != "" ];
