@@ -12,4 +12,9 @@ echo -e "action server is starting now"
 python nlg_server.py --domain domain >> /home/helpify.rasa/www/logs/rasa_nlg-`/bin/date +\%Y-\%m-\%d-\%H-\%M-\%H-\%M-\%S`.log
 
 echo "done" > /dev/null  2>&1
+
+
+
+
+
  
